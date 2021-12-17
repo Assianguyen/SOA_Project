@@ -1,4 +1,4 @@
-package fr.insa.mas.EmergencySWMS.model;
+package fr.insa.mas.GlobalMS.model;
 
 public class EmergencySW {
 	private boolean currentState;

@@ -42,7 +42,7 @@ public class LightMSRessource {
 	}
 	
 	@PutMapping("/{id}")
-	public void updateDoor(@PathVariable("id") int id, @RequestBody Light door) {
-		this.listLights[id-1].setOrder(door.getOrder());
+	public void updateLight(@PathVariable("id") int id, @RequestBody Light light) {
+		this.listLights[id-1].setOrder(light.getOrder());
 	}
 }

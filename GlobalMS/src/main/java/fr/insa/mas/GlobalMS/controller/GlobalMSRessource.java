@@ -22,12 +22,15 @@ public class GlobalMSRessource {
 	private final String stationURI = "http://localhost:8090/station/";
 	private final String windowURI = "http://localhost:8093/window/";
 	
+	private final String emergencyURI = "http://localhost:8083/emergency";
+	
 	int orderBlind;
 	boolean orderWindow;
 	boolean orderLight;
 	boolean orderO;
 	boolean orderL;
 	boolean orderStation;
+	boolean orderSW = true;
 	
 	int luminosity;
 	int temperature;
@@ -38,11 +41,13 @@ public class GlobalMSRessource {
 	String currentDoorStatus;
 	String currentStationStatus;
 	String currentLightStatus;
+	boolean currentEmergencyStatus;
 	String newBlindStatus;
 	String newWindowStatus;
 	String newDoorStatus;
 	String newStationStatus;
 	String newLightStatus;
+	boolean newEmergencyStatus;
 	
 	LocalDateTime now = LocalDateTime.now();
 	int hour = now.getHour();
@@ -68,12 +73,27 @@ public class GlobalMSRessource {
 			msg += "--- Il y a quelqu'un dans la salle <br> <br>";
 		}
 		
+		EmergencySW sw1 = restTemplate.getForObject(emergencyURI+"/sw", EmergencySW.class);
+		currentEmergencyStatus = restTemplate.getForObject(emergencyURI+"/status", Boolean.class);
+		if (currentEmergencyStatus) {
+			msg += "--- URGENCE : appelez les secours <br> <br>";
+		} 
+		
+		sw1.setOrder(orderSW);
+		restTemplate.put(emergencyURI+"/update", sw1);
+		newEmergencyStatus = restTemplate.getForObject(emergencyURI+"/status", Boolean.class);
+		if (newEmergencyStatus) {
+			msg += "--- URGENCE : appelez les secours <br> <br>";
+		}
+		
+		
 		for(int i = 1; i < 3; i++) {
 			Blind blind = restTemplate.getForObject(blindURI+i, Blind.class);
 			Door door = restTemplate.getForObject(doorURI+i, Door.class);
 			Station station = restTemplate.getForObject(stationURI+i, Station.class);
 			Light light = restTemplate.getForObject(lightURI+i, Light.class);
 			Window window = restTemplate.getForObject(windowURI+i, Window.class);
+			
 			
 			msg += "Blind "+i+"<br>";
 			
