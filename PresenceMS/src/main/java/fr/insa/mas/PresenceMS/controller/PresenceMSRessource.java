@@ -9,13 +9,9 @@ import org.springframework.web.bind.annotation.RestController;
 public class PresenceMSRessource {
 
 	@GetMapping("/value")
-	public boolean getPresence() {
-		int rdmPresence = (int) Math.ceil(Math.random()*2);
+	public int getPresence() {
+		int rdmPresence = (int) Math.ceil(Math.random()*100);
 		
-		if(rdmPresence == 1) {
-			return true;
-		}
-		
-		return false;
+		return rdmPresence;
 	}
 }
