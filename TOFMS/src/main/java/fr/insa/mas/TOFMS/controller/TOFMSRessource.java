@@ -10,6 +10,6 @@ public class TOFMSRessource {
 
 	@GetMapping("/value")
 	public int getTOF() {
-		return (int) Math.ceil(Math.random()*500);
+		return (int) Math.ceil(Math.random()*1000);
 	}
 }

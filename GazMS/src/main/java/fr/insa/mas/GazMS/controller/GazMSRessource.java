@@ -10,11 +10,11 @@ public class GazMSRessource {
 	
 	@GetMapping("/CO")
 	public int getCO() {
-		return (int) Math.ceil(Math.random()*100);
+		return (int) Math.ceil(Math.random()*1000);
 	}
 	
 	@GetMapping("/CO2")
 	public int getCO2() {
-		return (int) Math.ceil(Math.random()*100);
+		return (int) Math.ceil(Math.random()*1000);
 	}
 }
