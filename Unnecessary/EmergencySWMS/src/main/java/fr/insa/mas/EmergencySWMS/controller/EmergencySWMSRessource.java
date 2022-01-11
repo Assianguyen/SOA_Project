@@ -19,26 +19,20 @@ import fr.insa.mas.EmergencySWMS.model.EmergencySW;
 
 public class EmergencySWMSRessource {
 	
-	private EmergencySW sw1 = new EmergencySW(false,false);
+	private EmergencySW sw1 = new EmergencySW(false);
 	
 	@GetMapping("/sw")
 	public EmergencySW getSwitch() {
 		return sw1;
 	}
 	
-	@GetMapping("/status")
-	public boolean getStatus() {
-		return sw1.getCurrentState();
+	@GetMapping("/order")
+	public boolean getOrder() {
+		return sw1.getOrder();
 	}
 	
 	@PostMapping("/order")
 	public void giveOrder(@RequestParam boolean value) {
 		sw1.setOrder(value);
 	}
-	
-	@PutMapping("/update")
-	public void updateSwitch(@RequestBody EmergencySW sw) {
-		this.sw1.setOrder(sw.getOrder());
-	}
-
 }

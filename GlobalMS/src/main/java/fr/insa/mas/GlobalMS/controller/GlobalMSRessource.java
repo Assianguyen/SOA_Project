@@ -1,7 +1,10 @@
 package fr.insa.mas.GlobalMS.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 import java.time.*;
@@ -9,221 +12,223 @@ import java.time.*;
 import fr.insa.mas.GlobalMS.model.*;
 
 @RestController
-@RequestMapping("/auto")
+@RequestMapping("/gei")
 public class GlobalMSRessource {
 
-	private final String gazURI = "http://localhost:8084/gaz";
-	private final String luminosityURI = "http://localhost:8087/luminosity";
-	private final String noiseURI = "http://localhost:8088/noise";
-	private final String presenceURI = "http://localhost:8089/presence";
-	private final String temperatureURI = "http://localhost:8091/temperature";
-	private final String tofURI = "http://localhost:8092/tof";
 	
-	private final String blindURI = "http://localhost:8081/blind/";
-	private final String doorURI = "http://localhost:8082/door/";
-	private final String lightURI = "http://localhost:8086/light/";
-	private final String stationURI = "http://localhost:8090/station/";
-	private final String windowURI = "http://localhost:8093/window/";
+	private GlobalMS gei = new GlobalMS();
 	
-	private final String emergencyURI = "http://localhost:8083/emergency";
-	
-	int orderBlind;
-	boolean orderWindow;
-	boolean orderLight;
-	boolean orderO;
-	boolean orderL;
-	boolean orderStation;
-	boolean orderSW = false;
-	
-	int luminosity;
-	int temperature;
-	int presence;
-	int distance;
-	int noise;
-	int CO2;
-	boolean COVID = false;
-	
-	int currentBlindOpening;
-	String currentWindowStatus;
-	String currentDoorStatus;
-	String currentStationStatus;
-	String currentLightStatus;
-	boolean currentEmergencyStatus;
-	String newBlindStatus;
-	String newWindowStatus;
-	String newDoorStatus;
-	String newStationStatus;
-	String newLightStatus;
-	boolean newEmergencyStatus;
-	
-	LocalDateTime now = LocalDateTime.now();
-	int hour = now.getHour();
-	int min = now.getMinute();
-	int day = now.getDayOfMonth();
-	int month = now.getMonthValue();
-	int year = now.getYear();
-	
-	@GetMapping("/run")
-	public String run() {
+	@GetMapping("/auto")
+	public GlobalMS auto() {
+		LocalDateTime now = LocalDateTime.now();
+		gei.setHour(now.getHour());
+		gei.setMin(now.getMinute());
+		gei.setDay(now.getDayOfMonth());
+		gei.setMonth(now.getMonthValue());
+		gei.setYear(now.getYear());
+		
 		RestTemplate restTemplate = new RestTemplate();
-		String msg = "";
+		gei.setBlind1(restTemplate.getForObject(gei.getBlinduri()+1, Blind.class));
+		gei.setBlind2(restTemplate.getForObject(gei.getBlinduri()+2, Blind.class));
+		gei.setDoor1(restTemplate.getForObject(gei.getDooruri()+1, Door.class));
+		gei.setDoor2(restTemplate.getForObject(gei.getDooruri()+2, Door.class));
+		gei.setLight1(restTemplate.getForObject(gei.getLighturi()+1, Light.class));
+		gei.setLight2(restTemplate.getForObject(gei.getLighturi()+2, Light.class));
+		gei.setStation1(restTemplate.getForObject(gei.getStationuri()+1, Station.class));
+		gei.setStation2(restTemplate.getForObject(gei.getStationuri()+2, Station.class));
+		gei.setWindow1(restTemplate.getForObject(gei.getWindowuri()+1, Window.class));
+		gei.setWindow2(restTemplate.getForObject(gei.getWindowuri()+2, Window.class));
 		
-		msg += "Horloge : "+hour+":"+min+"<br> <br>";
+		gei.setLuminosity(restTemplate.getForObject(gei.getLuminosityuri()+"/value", Integer.class));
+		gei.setTemperature(restTemplate.getForObject(gei.getTemperatureuri()+"/value", Integer.class));
+		gei.setPresence(restTemplate.getForObject(gei.getPresenceuri()+"/value", Integer.class));
+		gei.setCO2(restTemplate.getForObject(gei.getGazuri()+"/CO2", Integer.class));
+		gei.setDistance(restTemplate.getForObject(gei.getTofuri()+"/value", Integer.class));
+		gei.setNoise(restTemplate.getForObject(gei.getNoiseuri()+"/value", Integer.class));
 		
-		luminosity = restTemplate.getForObject(luminosityURI+"/value", Integer.class);
-		msg += "--- La luminosité est de "+luminosity+"<br>";
-		
-		temperature = restTemplate.getForObject(temperatureURI+"/value", Integer.class);
-		msg += "--- La température est de "+temperature+"<br>";
-		
-		presence = restTemplate.getForObject(presenceURI+"/value", Integer.class);
-		CO2 = restTemplate.getForObject(gazURI+"/CO2", Integer.class);
-		if(presence > 0) {
-			msg += "--- Il y a quelqu'un dans la salle <br>";
-			if((presence > 20) || (CO2 > 800)) {
-				msg += "ATTENTION: non respect de la jauge COVID <br> <br>";
-				COVID = true;
-				
-			}else if((presence < 20) && (CO2 < 800)){
-				msg += "Jauge COVID respectée <br> <br>";
-				COVID = false;
+		if(gei.getPresence() > 0) {
+			if((gei.getPresence() > gei.getSeuilPresence()) || (gei.getCO2() > gei.getSeuilCO2())) {
+				gei.setCOVID(true);
+			}else if((gei.getPresence() < gei.getSeuilPresence()) && (gei.getCO2() < gei.getSeuilCO2())){
+				gei.setCOVID(false);
 			}
 		} else {
-			msg += "--- Il n'y a personne dans la salle <br> <br>";
-			COVID = false;
+			gei.setCOVID(false);
 		}
 		
-		distance = restTemplate.getForObject(tofURI+"/value", Integer.class);
-		
-		if(distance > 500) {
-			msg += "--- URGENT: objet manquant... Envoi mail... <br> <br>";
+		if(gei.getDistance() > gei.getSeuilDistance()) {
+			gei.setMissingItem(true);
+		} else {
+			gei.setMissingItem(false);
 		}
 		
-		noise = restTemplate.getForObject(noiseURI+"/value", Integer.class);
-		
-		if(noise > 85) {
-			msg += "--- ATTENTION: niveau de bruit trop élevé <br> <br>";
+		if(gei.getNoise() > gei.getSeuilNoise()) {
+			gei.setTooLoud(true);
+		} else {
+			gei.setTooLoud(false);
 		}
 		
-		EmergencySW sw1 = restTemplate.getForObject(emergencyURI+"/sw", EmergencySW.class);
-		currentEmergencyStatus = restTemplate.getForObject(emergencyURI+"/status", Boolean.class);
-		if (currentEmergencyStatus) {
-			msg += "--- URGENCE : appelez les secours <br> <br>";
-			orderSW = false;
-		} 
-		
-		sw1.setOrder(orderSW);
-		restTemplate.put(emergencyURI+"/update", sw1);		
-		
-		for(int i = 1; i < 3; i++) {
-			Blind blind = restTemplate.getForObject(blindURI+i, Blind.class);
-			Door door = restTemplate.getForObject(doorURI+i, Door.class);
-			Station station = restTemplate.getForObject(stationURI+i, Station.class);
-			Light light = restTemplate.getForObject(lightURI+i, Light.class);
-			Window window = restTemplate.getForObject(windowURI+i, Window.class);
+		if(gei.isCOVID()) {
+			gei.setOrderDoor(true);
+			gei.getDoor1().setOrderOpening(gei.isOrderDoor());
+			restTemplate.put(gei.getDooruri()+1, gei.getDoor1());
+			gei.getDoor2().setOrderOpening(gei.isOrderDoor());
+			restTemplate.put(gei.getDooruri()+2, gei.getDoor2());
 			
-			if(COVID) {
-				orderO = true;
-				door.setOrderOpening(orderO);
-				restTemplate.put(doorURI+i, door);
-				
-				orderWindow = true;
-				window.setOrder(orderWindow);
-				restTemplate.put(windowURI+i, window);
-			}else {
-				msg += "Blind "+i+"<br>";
-				
-				currentBlindOpening = restTemplate.getForObject(blindURI+"opening/"+i, Integer.class);
-				msg += "Ouverture actuelle : "+currentBlindOpening+" % <br>";
-				
-				msg += "## Commande actuelle : "+blind.getOrder()+"<br>";
-				
-				if(luminosity > 50) {
-					msg += "	| Forte luminosité -> Il faut fermer les volets <br>";
-					orderBlind = 100 - luminosity;
-					orderLight = false;
-				} else {
-					msg += "	| Faible luminosité -> Il faut ouvrir les volets <br>";
-					orderBlind = 100 - luminosity;
-					orderLight = true;
-				}
-				blind.setOrder(orderBlind);
-				
-				restTemplate.put(blindURI+i, blind);
-				
-				newBlindStatus = restTemplate.getForObject(blindURI+"status/"+i, String.class);
-				msg += "*** Le status du volet est : "+newBlindStatus+"<br> <br>";
-				
-				msg += "Door "+i+"<br>";
-				
-				currentDoorStatus = restTemplate.getForObject(doorURI+"status/"+i, String.class);
-				msg += "Etat actuel : <br>"+currentDoorStatus;
-				
-				msg += "## Commande actuelle : <br>";
-				msg += "### Lock : "+door.getOrderLock()+"<String newLightStatusbr>";
-				msg += "### opening : "+door.getOrderOpening()+"<br>";
-				
-				if((presence == 0) && ((hour > 21) || (hour < 8))) {
-					orderO = false;
-					orderL = false;
-					orderStation = false;
-					door.setOrderOpening(orderO);
-				} else {
-					orderL = true;
-				}
-				
-				door.setOrderLock(orderL);
-				restTemplate.put(doorURI+i, door);
-				
-				newDoorStatus = restTemplate.getForObject(doorURI+"status/"+i, String.class);
-				msg += "Nouvel état : <br>"+newDoorStatus+"<br>";
-				
-				msg += "Station "+i+"<br>";
-				
-				currentStationStatus = restTemplate.getForObject(stationURI+"status/"+i, String.class);
-				msg += "Etat actuel : <br>"+currentStationStatus;
-				
-				restTemplate.put(stationURI+i, station);
-				
-				station.setOrder(orderStation);
-				newStationStatus = restTemplate.getForObject(stationURI+"status/"+i, String.class);
-				msg += "Nouvel état : <br>"+newStationStatus+"<br>";
-				
-				
-				msg += "Light "+i+"<br>";
-				
-				currentLightStatus = restTemplate.getForObject(lightURI+"status/"+i, String.class);
-				msg += "Etat actuel : <br>"+currentLightStatus;
-				
-				light.setOrder(orderLight);
-				restTemplate.put(lightURI+i, station);
-				
-				newLightStatus = restTemplate.getForObject(lightURI+"status/"+i, String.class);
-				msg += "Nouvel état : <br>"+newLightStatus+"<br>";
-				
-				msg += "Window "+i+"<br>";
-				
-				currentWindowStatus = restTemplate.getForObject(windowURI+"status/"+i, String.class);
-				msg += "Ouverture actuelle : "+currentWindowStatus+"<br>";
-				
-				msg += "## Commande actuelle : "+window.getOrder()+"<br>";
-				
-				if(temperature > 25) {
-					msg += "	| Forte température -> Il faut ouvrir les fenêtres <br>";
-					orderWindow = true;
-				} else if (temperature < 18) {
-					msg += "	| Faible température -> Il faut fermer les fenêtres <br>";
-					orderWindow = false;
-				}
-				window.setOrder(orderWindow);
-				
-				restTemplate.put(windowURI+i, window);
-				
-				newWindowStatus = restTemplate.getForObject(windowURI+"status/"+i, String.class);
-				msg += "*** Le status de la fenêtre est : "+newWindowStatus+"<br> <br>";
-				}
+			gei.setOrderWindow(true);
+			gei.getWindow1().setOrder(gei.isOrderWindow());
+			restTemplate.put(gei.getWindowuri()+1, gei.getWindow1());
+			gei.getWindow2().setOrder(gei.isOrderWindow());
+			restTemplate.put(gei.getWindowuri()+2, gei.getWindow2());
+		}else {			
+			if(gei.getLuminosity() > gei.getSeuilLuminosity()) {
+				gei.setOrderBlind(100-gei.getLuminosity());
+				gei.setOrderLight(false);
+			} else {
+				gei.setOrderBlind(100-gei.getLuminosity());
+				gei.setOrderLight(true);
 			}
+			gei.getBlind1().setOrder(gei.getOrderBlind());
+			gei.getBlind2().setOrder(gei.getOrderBlind());
+			restTemplate.put(gei.getBlinduri()+1, gei.getBlind1());
+			restTemplate.put(gei.getBlinduri()+2, gei.getBlind2());
+			
+			if((gei.getHour() > 21) || (gei.getHour() < 8)) {
+				if(gei.getPresence() == 0) {
+					gei.setOrderDoor(false);
+					gei.setOrderStation(false);
+					gei.setOrderLight(false);
+				}
+			}else {
+				gei.setOrderDoor(true);
+			}
+
+			gei.getDoor1().setOrderOpening(gei.isOrderDoor());
+			gei.getDoor2().setOrderOpening(gei.isOrderDoor());
+			restTemplate.put(gei.getDooruri()+1, gei.getDoor1());
+			restTemplate.put(gei.getDooruri()+2, gei.getDoor2());
+			
+			gei.getStation1().setOrder(gei.isOrderStation());
+			gei.getStation2().setOrder(gei.isOrderStation());
+			restTemplate.put(gei.getStationuri()+1, gei.getStation1());
+			restTemplate.put(gei.getStationuri()+2, gei.getStation2());
+			
+			gei.getLight1().setOrder(gei.isOrderLight());
+			gei.getLight2().setOrder(gei.isOrderLight());
+			restTemplate.put(gei.getLighturi()+1, gei.getLight1());
+			restTemplate.put(gei.getLighturi()+2, gei.getLight2());
+			
+			if(gei.getTemperature() > gei.getSeuilTemperatureHot()) {
+				gei.setOrderWindow(true);
+			} else if (gei.getTemperature() < gei.getSeuilTemperatureCold()) {
+				gei.setOrderWindow(false);
+			}
+			gei.getWindow1().setOrder(gei.isOrderWindow());
+			gei.getWindow2().setOrder(gei.isOrderWindow());
+			restTemplate.put(gei.getWindowuri()+1, gei.getWindow1());
+			restTemplate.put(gei.getWindowuri()+2, gei.getWindow2());
+		}
+		return gei;
+	}
+	
+	@GetMapping("/run")
+	public GlobalMS run() {
+		RestTemplate restTemplate = new RestTemplate();
 		
-		return msg;
+		if(gei.getPresence() > 0) {
+			if((gei.getPresence() > gei.getSeuilPresence()) || (gei.getCO2() > gei.getSeuilCO2())) {
+				gei.setCOVID(true);
+			}else if((gei.getPresence() < gei.getSeuilPresence()) && (gei.getCO2() < gei.getSeuilCO2())){
+				gei.setCOVID(false);
+			}
+		} else {
+			gei.setCOVID(false);
+		}
+		
+		if(gei.getDistance() > gei.getSeuilDistance()) {
+			gei.setMissingItem(true);
+		} else {
+			gei.setMissingItem(false);
+		}
+		
+		if(gei.getNoise() > gei.getSeuilNoise()) {
+			gei.setTooLoud(true);
+		} else {
+			gei.setTooLoud(false);
+		}
+		
+		return gei;
+	}
+	
+	@PostMapping("/seuil/{sensor}")
+	public void setSeuil(@PathVariable("sensor") String sensor, @RequestParam int value) {
+		switch (sensor) {
+			case "luminosity":
+				gei.setSeuilLuminosity(value);
+				break;
+			case "temperatureH":
+				gei.setSeuilTemperatureHot(value);
+				break;
+			case "temperatureC":
+				gei.setSeuilTemperatureCold(value);
+				break;
+			case "CO2":
+				gei.setSeuilCO2(value);
+				break;
+			case "presence":
+				gei.setSeuilPresence(value);
+				break;
+			case "noise":
+				gei.setSeuilNoise(value);
+				break;
+			case "distance":
+				gei.setSeuilDistance(value);
+				break;
+		}
+	}
+	
+	@PostMapping("/button/{actuator}")
+	public void order(@PathVariable("actuator") String actuator, @RequestParam Boolean value) {
+		switch (actuator) {
+			case "d1":
+				gei.getDoor1().setOrderOpening(value);
+				break;
+			case "d2":
+				gei.getDoor2().setOrderOpening(value);
+				break;
+			case "w1":
+				gei.getWindow1().setOrder(value);
+				break;
+			case "w2":
+				gei.getWindow2().setOrder(value);
+				break;
+			case "s1":
+				gei.getStation1().setOrder(value);
+				break;
+			case "s2":
+				gei.getStation2().setOrder(value);
+				break;
+			case "l1":
+				gei.getLight1().setOrder(value);
+				break;
+			case "l2":
+				gei.getLight2().setOrder(value);
+				break;
+			case "eSW":
+				gei.setEmergency(value);
+				break;
+		}
+	}
+	
+	@PostMapping("/order/{actuator}")
+	public void orderB(@PathVariable("actuator") String actuator, @RequestParam int value) {
+		switch (actuator) {
+			case "b1":
+				gei.getBlind1().setOrder(value);
+				break;
+			case "b2":
+				gei.getBlind2().setOrder(value);
+				break;
+		}
 	}
 }

@@ -1,0 +1,2444 @@
+[
+    {
+        "id": "9234d55a8c2d8825",
+        "type": "tab",
+        "label": "SOA",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "8544b1c2caf04c9f",
+        "type": "ui_audio",
+        "z": "9234d55a8c2d8825",
+        "name": "Alarm",
+        "group": "9a6e3e049e7b7592",
+        "voice": "Microsoft Zira - English (United States)",
+        "always": true,
+        "x": 1150,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "debe9b0883d5e825",
+        "type": "ui_gauge",
+        "z": "9234d55a8c2d8825",
+        "name": "",
+        "group": "9a6e3e049e7b7592",
+        "order": 9,
+        "width": 4,
+        "height": 2,
+        "gtype": "gage",
+        "title": "CO2",
+        "label": "ppm",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "1000",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "400",
+        "seg2": "800",
+        "className": "",
+        "x": 1010,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "1a316b373c111d02",
+        "type": "ui_chart",
+        "z": "9234d55a8c2d8825",
+        "name": "",
+        "group": "9a6e3e049e7b7592",
+        "order": 15,
+        "width": 4,
+        "height": 2,
+        "label": "Luminosity",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1030,
+        "y": 180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "8205da92bdf5cc79",
+        "type": "ui_gauge",
+        "z": "9234d55a8c2d8825",
+        "name": "",
+        "group": "9a6e3e049e7b7592",
+        "order": 14,
+        "width": 4,
+        "height": 2,
+        "gtype": "wave",
+        "title": "Presence",
+        "label": "people",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "className": "",
+        "x": 1020,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "0e1354d7a68bd23c",
+        "type": "ui_gauge",
+        "z": "9234d55a8c2d8825",
+        "name": "",
+        "group": "9a6e3e049e7b7592",
+        "order": 10,
+        "width": 4,
+        "height": 2,
+        "gtype": "gage",
+        "title": "Noise",
+        "label": "dB",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "120",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "60",
+        "seg2": "85",
+        "className": "",
+        "x": 1010,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "8639eeebdf8f481e",
+        "type": "ui_chart",
+        "z": "9234d55a8c2d8825",
+        "name": "",
+        "group": "9a6e3e049e7b7592",
+        "order": 11,
+        "width": 4,
+        "height": 2,
+        "label": "Temperature",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1030,
+        "y": 140,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "aaa37e4d6ab08b34",
+        "type": "ui_gauge",
+        "z": "9234d55a8c2d8825",
+        "name": "",
+        "group": "9a6e3e049e7b7592",
+        "order": 13,
+        "width": 4,
+        "height": 2,
+        "gtype": "donut",
+        "title": "ToF",
+        "label": "m",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "1000",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "250",
+        "seg2": "500",
+        "className": "",
+        "x": 1010,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "99d845fe855af2af",
+        "type": "ui_toast",
+        "z": "9234d55a8c2d8825",
+        "position": "bottom right",
+        "displayTime": "10",
+        "highlight": "",
+        "sendall": true,
+        "outputs": 0,
+        "ok": "OK",
+        "cancel": "",
+        "raw": false,
+        "className": "",
+        "topic": "",
+        "name": "Appel urgences",
+        "x": 1180,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "7514f189dcec98c3",
+        "type": "ui_text",
+        "z": "9234d55a8c2d8825",
+        "group": "9a6e3e049e7b7592",
+        "order": 1,
+        "width": 3,
+        "height": 1,
+        "name": "",
+        "label": "Date",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 1010,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "8909cf3869cb29b9",
+        "type": "ui_text_input",
+        "z": "9234d55a8c2d8825",
+        "name": "",
+        "label": "Seuil luminosity",
+        "tooltip": "",
+        "group": "4c391319cfee750c",
+        "order": 3,
+        "width": 3,
+        "height": 1,
+        "passthru": true,
+        "mode": "text",
+        "delay": 300,
+        "topic": "topic",
+        "sendOnBlur": true,
+        "className": "",
+        "topicType": "msg",
+        "x": 1320,
+        "y": 1060,
+        "wires": [
+            [
+                "9206a8d99bb610ce"
+            ]
+        ]
+    },
+    {
+        "id": "356cd45cbfc039b3",
+        "type": "ui_text_input",
+        "z": "9234d55a8c2d8825",
+        "name": "",
+        "label": "Seuil cold temperature",
+        "tooltip": "",
+        "group": "4c391319cfee750c",
+        "order": 2,
+        "width": 3,
+        "height": 1,
+        "passthru": true,
+        "mode": "text",
+        "delay": 300,
+        "topic": "topic",
+        "sendOnBlur": true,
+        "className": "",
+        "topicType": "msg",
+        "x": 1340,
+        "y": 1140,
+        "wires": [
+            [
+                "9bd94c7a12b5c1ac"
+            ]
+        ]
+    },
+    {
+        "id": "d3fbaaa95c6243b4",
+        "type": "ui_text_input",
+        "z": "9234d55a8c2d8825",
+        "name": "",
+        "label": "Seuil CO2",
+        "tooltip": "",
+        "group": "4c391319cfee750c",
+        "order": 7,
+        "width": 3,
+        "height": 1,
+        "passthru": true,
+        "mode": "text",
+        "delay": 300,
+        "topic": "topic",
+        "sendOnBlur": true,
+        "className": "",
+        "topicType": "msg",
+        "x": 1310,
+        "y": 1180,
+        "wires": [
+            [
+                "5ae7bc6d3b8d4d09"
+            ]
+        ]
+    },
+    {
+        "id": "3ba64897e860b91b",
+        "type": "ui_text_input",
+        "z": "9234d55a8c2d8825",
+        "name": "",
+        "label": "Seuil presence",
+        "tooltip": "",
+        "group": "4c391319cfee750c",
+        "order": 6,
+        "width": 3,
+        "height": 1,
+        "passthru": true,
+        "mode": "text",
+        "delay": 300,
+        "topic": "topic",
+        "sendOnBlur": true,
+        "className": "",
+        "topicType": "msg",
+        "x": 1320,
+        "y": 1220,
+        "wires": [
+            [
+                "719ad69792450119"
+            ]
+        ]
+    },
+    {
+        "id": "f71ac2d796c0309d",
+        "type": "ui_text_input",
+        "z": "9234d55a8c2d8825",
+        "name": "",
+        "label": "Seuil noise",
+        "tooltip": "",
+        "group": "4c391319cfee750c",
+        "order": 4,
+        "width": 3,
+        "height": 1,
+        "passthru": true,
+        "mode": "text",
+        "delay": 300,
+        "topic": "topic",
+        "sendOnBlur": true,
+        "className": "",
+        "topicType": "msg",
+        "x": 1310,
+        "y": 1260,
+        "wires": [
+            [
+                "319066d90adbf072"
+            ]
+        ]
+    },
+    {
+        "id": "061f45fd18f5d697",
+        "type": "ui_text_input",
+        "z": "9234d55a8c2d8825",
+        "name": "",
+        "label": "Seuil distance",
+        "tooltip": "",
+        "group": "4c391319cfee750c",
+        "order": 5,
+        "width": 3,
+        "height": 1,
+        "passthru": true,
+        "mode": "text",
+        "delay": 300,
+        "topic": "topic",
+        "sendOnBlur": true,
+        "className": "",
+        "topicType": "msg",
+        "x": 1320,
+        "y": 1300,
+        "wires": [
+            [
+                "7157ecb0fade5d32"
+            ]
+        ]
+    },
+    {
+        "id": "ea9f155ff29cf57f",
+        "type": "ui_text",
+        "z": "9234d55a8c2d8825",
+        "group": "9a6e3e049e7b7592",
+        "order": 3,
+        "width": 3,
+        "height": 1,
+        "name": "",
+        "label": "Hour",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 1010,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "29cc7bfbd3ea7fc3",
+        "type": "function",
+        "z": "9234d55a8c2d8825",
+        "name": "",
+        "func": "msg.payload = msg.payload[\"day\"]+\"/\"+msg.payload[\"month\"]+\"/\"+msg.payload[\"year\"]\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 880,
+        "y": 60,
+        "wires": [
+            [
+                "7514f189dcec98c3"
+            ]
+        ]
+    },
+    {
+        "id": "136cef5f64c4de1f",
+        "type": "http request",
+        "z": "9234d55a8c2d8825",
+        "name": "",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "http://localhost:8080/gei/auto",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "senderr": false,
+        "x": 270,
+        "y": 40,
+        "wires": [
+            [
+                "6013057c486837e8"
+            ]
+        ]
+    },
+    {
+        "id": "31030b4eb29654dc",
+        "type": "inject",
+        "z": "9234d55a8c2d8825",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "30",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "1",
+        "topic": "",
+        "payloadType": "date",
+        "x": 110,
+        "y": 40,
+        "wires": [
+            [
+                "136cef5f64c4de1f"
+            ]
+        ]
+    },
+    {
+        "id": "a0d2a82211dc3b79",
+        "type": "debug",
+        "z": "9234d55a8c2d8825",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 890,
+        "y": 20,
+        "wires": []
+    },
+    {
+        "id": "6013057c486837e8",
+        "type": "json",
+        "z": "9234d55a8c2d8825",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 410,
+        "y": 40,
+        "wires": [
+            [
+                "29cc7bfbd3ea7fc3",
+                "5dcc6bfa25d1a1ee",
+                "973c69add5323c36",
+                "a0d2a82211dc3b79",
+                "e760e7f96a304e51",
+                "f186b040137d807e",
+                "0a075581ef86ca4c",
+                "4e49c3f95775826b",
+                "d0a76675cd7015f3",
+                "ace09ccac53bf6ac",
+                "f947c3f9421733bd",
+                "044e8940c68445ce",
+                "2a6177b2fa6a81c6",
+                "d6240ff188955632",
+                "c94864e8e73383f9",
+                "baf3e0b2ef21dc4d",
+                "0cda6c8b90a9c3c7",
+                "3073dfa34f13a86f",
+                "ef5095476f98dc7f",
+                "3454a177f43141b4",
+                "6bc76fed18d59f29",
+                "bb82a4953e30190e",
+                "b563701ee500dda9",
+                "eaa3a8392c35f31a",
+                "c92862b648578a9f",
+                "83e414c088799e59",
+                "0fa6614aa5f7746e",
+                "d1ee9ad604738f9b",
+                "e94f1c8004468ca4",
+                "b20dac0394834f06",
+                "f2978b1378cc2dfd",
+                "b3cb1e58766e8d80"
+            ]
+        ]
+    },
+    {
+        "id": "661284500ab9f760",
+        "type": "ui_text",
+        "z": "9234d55a8c2d8825",
+        "group": "9a6e3e049e7b7592",
+        "order": 5,
+        "width": 4,
+        "height": 1,
+        "name": "COVID Gauge",
+        "label": "COVID Gauge",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "className": "",
+        "x": 1040,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "5dcc6bfa25d1a1ee",
+        "type": "function",
+        "z": "9234d55a8c2d8825",
+        "name": "",
+        "func": "msg.payload = msg.payload[\"hour\"]+\":\"+msg.payload[\"min\"]\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 880,
+        "y": 100,
+        "wires": [
+            [
+                "ea9f155ff29cf57f"
+            ]
+        ]
+    },
+    {
+        "id": "973c69add5323c36",
+        "type": "function",
+        "z": "9234d55a8c2d8825",
+        "name": "",
+        "func": "msg.payload = msg.payload[\"blind1\"]\nmsg.payload = msg.payload[\"order\"]\nif(msg.payload == 0){\n    msg.payload = \"Closed\"\n} else {\n    msg.payload = \"Open\"\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 880,
+        "y": 580,
+        "wires": [
+            [
+                "771ae92158ebcb24"
+            ]
+        ]
+    },
+    {
+        "id": "ace09ccac53bf6ac",
+        "type": "function",
+        "z": "9234d55a8c2d8825",
+        "name": "",
+        "func": "msg.payload = msg.payload[\"temperature\"]\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 880,
+        "y": 140,
+        "wires": [
+            [
+                "8639eeebdf8f481e"
+            ]
+        ]
+    },
+    {
+        "id": "e760e7f96a304e51",
+        "type": "function",
+        "z": "9234d55a8c2d8825",
+        "name": "",
+        "func": "msg.payload = msg.payload[\"luminosity\"]\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 880,
+        "y": 180,
+        "wires": [
+            [
+                "1a316b373c111d02"
+            ]
+        ]
+    },
+    {
+        "id": "f186b040137d807e",
+        "type": "function",
+        "z": "9234d55a8c2d8825",
+        "name": "",
+        "func": "msg.payload = msg.payload[\"distance\"]\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 880,
+        "y": 220,
+        "wires": [
+            [
+                "aaa37e4d6ab08b34"
+            ]
+        ]
+    },
+    {
+        "id": "0a075581ef86ca4c",
+        "type": "function",
+        "z": "9234d55a8c2d8825",
+        "name": "",
+        "func": "msg.payload = msg.payload[\"co2\"]\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 880,
+        "y": 260,
+        "wires": [
+            [
+                "debe9b0883d5e825"
+            ]
+        ]
+    },
+    {
+        "id": "4e49c3f95775826b",
+        "type": "function",
+        "z": "9234d55a8c2d8825",
+        "name": "",
+        "func": "msg.payload = msg.payload[\"presence\"]\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 880,
+        "y": 300,
+        "wires": [
+            [
+                "8205da92bdf5cc79"
+            ]
+        ]
+    },
+    {
+        "id": "d0a76675cd7015f3",
+        "type": "function",
+        "z": "9234d55a8c2d8825",
+        "name": "",
+        "func": "msg.payload = msg.payload[\"noise\"]\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 880,
+        "y": 340,
+        "wires": [
+            [
+                "0e1354d7a68bd23c"
+            ]
+        ]
+    },
+    {
+        "id": "771ae92158ebcb24",
+        "type": "ui_text",
+        "z": "9234d55a8c2d8825",
+        "group": "66371778ccec7a41",
+        "order": 17,
+        "width": 2,
+        "height": 1,
+        "name": "",
+        "label": "Blind1",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "className": "",
+        "x": 1010,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "f947c3f9421733bd",
+        "type": "function",
+        "z": "9234d55a8c2d8825",
+        "name": "",
+        "func": "msg.payload = msg.payload[\"blind2\"]\nmsg.payload = msg.payload[\"order\"]\nif(msg.payload == 0){\n    msg.payload = \"Closed\"\n} else {\n    msg.payload = \"Open\"\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 880,
+        "y": 660,
+        "wires": [
+            [
+                "d0feb09052051e3c"
+            ]
+        ]
+    },
+    {
+        "id": "d0feb09052051e3c",
+        "type": "ui_text",
+        "z": "9234d55a8c2d8825",
+        "group": "66371778ccec7a41",
+        "order": 18,
+        "width": 2,
+        "height": 1,
+        "name": "",
+        "label": "Blind2",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "className": "",
+        "x": 1010,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "044e8940c68445ce",
+        "type": "function",
+        "z": "9234d55a8c2d8825",
+        "name": "",
+        "func": "msg.payload = msg.payload[\"door1\"]\nopening = msg.payload[\"currentOpeningState\"]\nif(opening){\n    msg.payload = \"Open\"\n} else {\n    msg.payload = \"Closed\"\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 880,
+        "y": 740,
+        "wires": [
+            [
+                "458dfa43fc1b280a",
+                "27760be58badd02b"
+            ]
+        ]
+    },
+    {
+        "id": "458dfa43fc1b280a",
+        "type": "ui_text",
+        "z": "9234d55a8c2d8825",
+        "group": "66371778ccec7a41",
+        "order": 1,
+        "width": 2,
+        "height": 1,
+        "name": "",
+        "label": "Door1",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "className": "",
+        "x": 1010,
+        "y": 740,
+        "wires": []
+    },
+    {
+        "id": "2a6177b2fa6a81c6",
+        "type": "function",
+        "z": "9234d55a8c2d8825",
+        "name": "",
+        "func": "msg.payload = msg.payload[\"door2\"]\nopening = msg.payload[\"currentOpeningState\"]\nif(opening){\n    msg.payload = \"Open\"\n} else {\n    msg.payload = \"Closed\"\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 880,
+        "y": 780,
+        "wires": [
+            [
+                "a80384c1a94b5d99",
+                "28e66744ebbc7cff"
+            ]
+        ]
+    },
+    {
+        "id": "a80384c1a94b5d99",
+        "type": "ui_text",
+        "z": "9234d55a8c2d8825",
+        "group": "66371778ccec7a41",
+        "order": 2,
+        "width": 2,
+        "height": 1,
+        "name": "",
+        "label": "Door2",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "className": "",
+        "x": 1010,
+        "y": 780,
+        "wires": []
+    },
+    {
+        "id": "d6240ff188955632",
+        "type": "function",
+        "z": "9234d55a8c2d8825",
+        "name": "",
+        "func": "msg.payload = msg.payload[\"light1\"]\nmsg.payload = msg.payload[\"currentState\"]\nif(msg.payload){\n    msg.payload = \"On\"\n} else {\n    msg.payload = \"Off\"\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 880,
+        "y": 820,
+        "wires": [
+            [
+                "90402b9c0dc7c52c",
+                "d276f9f1b5688362"
+            ]
+        ]
+    },
+    {
+        "id": "90402b9c0dc7c52c",
+        "type": "ui_text",
+        "z": "9234d55a8c2d8825",
+        "group": "66371778ccec7a41",
+        "order": 3,
+        "width": 2,
+        "height": 1,
+        "name": "",
+        "label": "Light1",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "className": "",
+        "x": 1010,
+        "y": 820,
+        "wires": []
+    },
+    {
+        "id": "b03985fa99caa642",
+        "type": "ui_text",
+        "z": "9234d55a8c2d8825",
+        "group": "66371778ccec7a41",
+        "order": 4,
+        "width": 2,
+        "height": 1,
+        "name": "",
+        "label": "Light2",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "className": "",
+        "x": 1010,
+        "y": 860,
+        "wires": []
+    },
+    {
+        "id": "c94864e8e73383f9",
+        "type": "function",
+        "z": "9234d55a8c2d8825",
+        "name": "",
+        "func": "msg.payload = msg.payload[\"light2\"]\nmsg.payload = msg.payload[\"currentState\"]\nif(msg.payload){\n    msg.payload = \"On\"\n} else {\n    msg.payload = \"Off\"\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 880,
+        "y": 860,
+        "wires": [
+            [
+                "b03985fa99caa642",
+                "bb27ec0aaa0e9c69"
+            ]
+        ]
+    },
+    {
+        "id": "1c023fb4ace96bcb",
+        "type": "ui_text",
+        "z": "9234d55a8c2d8825",
+        "group": "66371778ccec7a41",
+        "order": 12,
+        "width": 2,
+        "height": 1,
+        "name": "",
+        "label": "Station2",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "className": "",
+        "x": 1020,
+        "y": 940,
+        "wires": []
+    },
+    {
+        "id": "0cda6c8b90a9c3c7",
+        "type": "function",
+        "z": "9234d55a8c2d8825",
+        "name": "",
+        "func": "msg.payload = msg.payload[\"station2\"]\nmsg.payload = msg.payload[\"currentState\"]\nif(msg.payload){\n    msg.payload = \"On\"\n} else {\n    msg.payload = \"Off\"\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 880,
+        "y": 940,
+        "wires": [
+            [
+                "1c023fb4ace96bcb",
+                "fd0f5576887d54f3"
+            ]
+        ]
+    },
+    {
+        "id": "baf3e0b2ef21dc4d",
+        "type": "function",
+        "z": "9234d55a8c2d8825",
+        "name": "",
+        "func": "msg.payload = msg.payload[\"station1\"]\nmsg.payload = msg.payload[\"currentState\"]\nif(msg.payload){\n    msg.payload = \"On\"\n} else {\n    msg.payload = \"Off\"\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 880,
+        "y": 900,
+        "wires": [
+            [
+                "5ea672139ae0a452",
+                "7d6e4d6167919428"
+            ]
+        ]
+    },
+    {
+        "id": "5ea672139ae0a452",
+        "type": "ui_text",
+        "z": "9234d55a8c2d8825",
+        "group": "66371778ccec7a41",
+        "order": 11,
+        "width": 2,
+        "height": 1,
+        "name": "",
+        "label": "Station1",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "className": "",
+        "x": 1020,
+        "y": 900,
+        "wires": []
+    },
+    {
+        "id": "b935ec6335659ba9",
+        "type": "ui_text",
+        "z": "9234d55a8c2d8825",
+        "group": "66371778ccec7a41",
+        "order": 10,
+        "width": 2,
+        "height": 1,
+        "name": "",
+        "label": "Window2",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "className": "",
+        "x": 1020,
+        "y": 1020,
+        "wires": []
+    },
+    {
+        "id": "ef5095476f98dc7f",
+        "type": "function",
+        "z": "9234d55a8c2d8825",
+        "name": "",
+        "func": "msg.payload = msg.payload[\"window2\"]\nmsg.payload = msg.payload[\"currentState\"]\nif(msg.payload){\n    msg.payload = \"Open\"\n} else {\n    msg.payload = \"Closed\"\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 880,
+        "y": 1020,
+        "wires": [
+            [
+                "b935ec6335659ba9",
+                "c5b732cbb7ea5a9e"
+            ]
+        ]
+    },
+    {
+        "id": "3073dfa34f13a86f",
+        "type": "function",
+        "z": "9234d55a8c2d8825",
+        "name": "",
+        "func": "msg.payload = msg.payload[\"window1\"]\nmsg.payload = msg.payload[\"currentState\"]\nif(msg.payload){\n    msg.payload = \"Open\"\n} else {\n    msg.payload = \"Closed\"\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 880,
+        "y": 980,
+        "wires": [
+            [
+                "5ac2d81cacda7ae0",
+                "5f5e42b3e5a653b1"
+            ]
+        ]
+    },
+    {
+        "id": "5ac2d81cacda7ae0",
+        "type": "ui_text",
+        "z": "9234d55a8c2d8825",
+        "group": "66371778ccec7a41",
+        "order": 9,
+        "width": 2,
+        "height": 1,
+        "name": "",
+        "label": "Window1",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "className": "",
+        "x": 1020,
+        "y": 980,
+        "wires": []
+    },
+    {
+        "id": "3454a177f43141b4",
+        "type": "function",
+        "z": "9234d55a8c2d8825",
+        "name": "",
+        "func": "miss = msg.payload[\"missingItem\"]\nif(miss){\n    msg.payload = \"WARNING: missing\"\n} else {\n    msg.payload = \"Ok\"\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 880,
+        "y": 460,
+        "wires": [
+            [
+                "8921a93ef2f4dd44"
+            ]
+        ]
+    },
+    {
+        "id": "6bc76fed18d59f29",
+        "type": "function",
+        "z": "9234d55a8c2d8825",
+        "name": "",
+        "func": "state = msg.payload[\"emergency\"]\nif(state){\n    msg.payload = \"WARNING: emergency\"\n} else {\n    msg.payload = \"Ok\"\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 880,
+        "y": 500,
+        "wires": [
+            [
+                "8305ba649f9180ad"
+            ]
+        ]
+    },
+    {
+        "id": "bb82a4953e30190e",
+        "type": "function",
+        "z": "9234d55a8c2d8825",
+        "name": "",
+        "func": "covid = msg.payload[\"COVID\"]\nif(covid){\n    msg.payload = \"OK\"\n}else{\n    msg.payload = \"Not oK\"\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 880,
+        "y": 420,
+        "wires": [
+            [
+                "661284500ab9f760"
+            ]
+        ]
+    },
+    {
+        "id": "7ed233d64cbe4ad2",
+        "type": "ui_slider",
+        "z": "9234d55a8c2d8825",
+        "name": "Blind1",
+        "label": "",
+        "tooltip": "",
+        "group": "66371778ccec7a41",
+        "order": 20,
+        "width": 2,
+        "height": 1,
+        "passthru": false,
+        "outs": "end",
+        "topic": "topic",
+        "topicType": "msg",
+        "min": 0,
+        "max": "100",
+        "step": 1,
+        "className": "",
+        "x": 1290,
+        "y": 620,
+        "wires": [
+            [
+                "34ea6b78562f46fe"
+            ]
+        ]
+    },
+    {
+        "id": "9fa6bf80a318fc0a",
+        "type": "ui_slider",
+        "z": "9234d55a8c2d8825",
+        "name": "Blind2",
+        "label": "",
+        "tooltip": "",
+        "group": "66371778ccec7a41",
+        "order": 21,
+        "width": 2,
+        "height": 1,
+        "passthru": true,
+        "outs": "end",
+        "topic": "topic",
+        "topicType": "msg",
+        "min": 0,
+        "max": "100",
+        "step": 1,
+        "className": "",
+        "x": 1290,
+        "y": 700,
+        "wires": [
+            [
+                "db298eb4b5a0d71d"
+            ]
+        ]
+    },
+    {
+        "id": "eaa3a8392c35f31a",
+        "type": "function",
+        "z": "9234d55a8c2d8825",
+        "name": "",
+        "func": "msg.payload = msg.payload[\"blind1\"]\nmsg.payload = msg.payload[\"order\"]\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 880,
+        "y": 620,
+        "wires": [
+            [
+                "7ed233d64cbe4ad2"
+            ]
+        ]
+    },
+    {
+        "id": "b563701ee500dda9",
+        "type": "function",
+        "z": "9234d55a8c2d8825",
+        "name": "",
+        "func": "msg.payload = msg.payload[\"blind2\"]\nmsg.payload = msg.payload[\"order\"]\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 880,
+        "y": 700,
+        "wires": [
+            [
+                "9fa6bf80a318fc0a"
+            ]
+        ]
+    },
+    {
+        "id": "b0991cf0bd1a8d61",
+        "type": "ui_switch",
+        "z": "9234d55a8c2d8825",
+        "name": "d1",
+        "label": "",
+        "tooltip": "",
+        "group": "66371778ccec7a41",
+        "order": 5,
+        "width": 2,
+        "height": 1,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 1290,
+        "y": 740,
+        "wires": [
+            [
+                "fe214ce428a52ad3"
+            ]
+        ]
+    },
+    {
+        "id": "27760be58badd02b",
+        "type": "function",
+        "z": "9234d55a8c2d8825",
+        "name": "",
+        "func": "if(msg.payload == \"Open\"){\n    msg.payload = true\n} else if (msg.payload == \"Closed\"){\n    msg.payload = false\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1140,
+        "y": 740,
+        "wires": [
+            [
+                "b0991cf0bd1a8d61"
+            ]
+        ]
+    },
+    {
+        "id": "28e66744ebbc7cff",
+        "type": "function",
+        "z": "9234d55a8c2d8825",
+        "name": "",
+        "func": "if(msg.payload == \"Open\"){\n    msg.payload = true\n} else if (msg.payload == \"Closed\"){\n    msg.payload = false\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1140,
+        "y": 780,
+        "wires": [
+            [
+                "fde07a3868d455b9"
+            ]
+        ]
+    },
+    {
+        "id": "fde07a3868d455b9",
+        "type": "ui_switch",
+        "z": "9234d55a8c2d8825",
+        "name": "d2",
+        "label": "",
+        "tooltip": "",
+        "group": "66371778ccec7a41",
+        "order": 6,
+        "width": 2,
+        "height": 1,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 1290,
+        "y": 780,
+        "wires": [
+            [
+                "24cd862f7d2b5918"
+            ]
+        ]
+    },
+    {
+        "id": "d276f9f1b5688362",
+        "type": "function",
+        "z": "9234d55a8c2d8825",
+        "name": "",
+        "func": "if(msg.payload == \"Open\"){\n    msg.payload = true\n} else if (msg.payload == \"Closed\"){\n    msg.payload = false\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1140,
+        "y": 820,
+        "wires": [
+            [
+                "a543c530b6b16b94"
+            ]
+        ]
+    },
+    {
+        "id": "a543c530b6b16b94",
+        "type": "ui_switch",
+        "z": "9234d55a8c2d8825",
+        "name": "l1",
+        "label": "",
+        "tooltip": "",
+        "group": "66371778ccec7a41",
+        "order": 7,
+        "width": 2,
+        "height": 1,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 1290,
+        "y": 820,
+        "wires": [
+            [
+                "3d728f1b06d2116d"
+            ]
+        ]
+    },
+    {
+        "id": "bb27ec0aaa0e9c69",
+        "type": "function",
+        "z": "9234d55a8c2d8825",
+        "name": "",
+        "func": "if(msg.payload == \"Open\"){\n    msg.payload = true\n} else if (msg.payload == \"Closed\"){\n    msg.payload = false\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1140,
+        "y": 860,
+        "wires": [
+            [
+                "9a03c358345851d3"
+            ]
+        ]
+    },
+    {
+        "id": "9a03c358345851d3",
+        "type": "ui_switch",
+        "z": "9234d55a8c2d8825",
+        "name": "l2",
+        "label": "",
+        "tooltip": "",
+        "group": "66371778ccec7a41",
+        "order": 8,
+        "width": 2,
+        "height": 1,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 1290,
+        "y": 860,
+        "wires": [
+            [
+                "5cef9c53b39c469a"
+            ]
+        ]
+    },
+    {
+        "id": "7d6e4d6167919428",
+        "type": "function",
+        "z": "9234d55a8c2d8825",
+        "name": "",
+        "func": "if(msg.payload == \"Open\"){\n    msg.payload = true\n} else if (msg.payload == \"Closed\"){\n    msg.payload = false\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1160,
+        "y": 900,
+        "wires": [
+            [
+                "bdbe4f6d15108d21"
+            ]
+        ]
+    },
+    {
+        "id": "bdbe4f6d15108d21",
+        "type": "ui_switch",
+        "z": "9234d55a8c2d8825",
+        "name": "s1",
+        "label": "",
+        "tooltip": "",
+        "group": "66371778ccec7a41",
+        "order": 15,
+        "width": 2,
+        "height": 1,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 1290,
+        "y": 900,
+        "wires": [
+            [
+                "f8f3bbbe5f3fc8a1"
+            ]
+        ]
+    },
+    {
+        "id": "fd0f5576887d54f3",
+        "type": "function",
+        "z": "9234d55a8c2d8825",
+        "name": "",
+        "func": "if(msg.payload == \"Open\"){\n    msg.payload = true\n} else if (msg.payload == \"Closed\"){\n    msg.payload = false\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1160,
+        "y": 940,
+        "wires": [
+            [
+                "774e32227d556232"
+            ]
+        ]
+    },
+    {
+        "id": "774e32227d556232",
+        "type": "ui_switch",
+        "z": "9234d55a8c2d8825",
+        "name": "s2",
+        "label": "",
+        "tooltip": "",
+        "group": "66371778ccec7a41",
+        "order": 16,
+        "width": 2,
+        "height": 1,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 1290,
+        "y": 940,
+        "wires": [
+            [
+                "f4ada01b0f539aad"
+            ]
+        ]
+    },
+    {
+        "id": "5f5e42b3e5a653b1",
+        "type": "function",
+        "z": "9234d55a8c2d8825",
+        "name": "",
+        "func": "if(msg.payload == \"Open\"){\n    msg.payload = true\n} else if (msg.payload == \"Closed\"){\n    msg.payload = false\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1160,
+        "y": 980,
+        "wires": [
+            [
+                "011a9854b421f850"
+            ]
+        ]
+    },
+    {
+        "id": "011a9854b421f850",
+        "type": "ui_switch",
+        "z": "9234d55a8c2d8825",
+        "name": "w1",
+        "label": "",
+        "tooltip": "",
+        "group": "66371778ccec7a41",
+        "order": 13,
+        "width": 2,
+        "height": 1,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 1290,
+        "y": 980,
+        "wires": [
+            [
+                "ede20eaf675a4529"
+            ]
+        ]
+    },
+    {
+        "id": "c5b732cbb7ea5a9e",
+        "type": "function",
+        "z": "9234d55a8c2d8825",
+        "name": "",
+        "func": "if(msg.payload == \"Open\"){\n    msg.payload = true\n} else if (msg.payload == \"Closed\"){\n    msg.payload = false\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1160,
+        "y": 1020,
+        "wires": [
+            [
+                "4ea1c63302dbe3f5"
+            ]
+        ]
+    },
+    {
+        "id": "4ea1c63302dbe3f5",
+        "type": "ui_switch",
+        "z": "9234d55a8c2d8825",
+        "name": "w2",
+        "label": "",
+        "tooltip": "",
+        "group": "66371778ccec7a41",
+        "order": 14,
+        "width": 2,
+        "height": 1,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 1290,
+        "y": 1020,
+        "wires": [
+            [
+                "ce030d2b84100877"
+            ]
+        ]
+    },
+    {
+        "id": "c92862b648578a9f",
+        "type": "function",
+        "z": "9234d55a8c2d8825",
+        "name": "",
+        "func": "noise = msg.payload[\"tooLoud\"]\nif(noise){\n    msg.payload = \"WARNING: too loud\"\n} else {\n    msg.payload = \"Ok\"\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 880,
+        "y": 380,
+        "wires": [
+            [
+                "1ad5109d1ba92529"
+            ]
+        ]
+    },
+    {
+        "id": "4a6ae4cc96fe767a",
+        "type": "inject",
+        "z": "9234d55a8c2d8825",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "1",
+        "topic": "",
+        "payloadType": "date",
+        "x": 110,
+        "y": 100,
+        "wires": [
+            [
+                "ec5adffd1b6a8421"
+            ]
+        ]
+    },
+    {
+        "id": "ec5adffd1b6a8421",
+        "type": "http request",
+        "z": "9234d55a8c2d8825",
+        "name": "",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "http://localhost:8080/gei/run",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "senderr": false,
+        "x": 270,
+        "y": 100,
+        "wires": [
+            [
+                "6013057c486837e8"
+            ]
+        ]
+    },
+    {
+        "id": "8305ba649f9180ad",
+        "type": "switch",
+        "z": "9234d55a8c2d8825",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "WARNING: emergency",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 1010,
+        "y": 500,
+        "wires": [
+            [
+                "99d845fe855af2af",
+                "8544b1c2caf04c9f"
+            ]
+        ]
+    },
+    {
+        "id": "fe214ce428a52ad3",
+        "type": "http request",
+        "z": "9234d55a8c2d8825",
+        "name": "",
+        "method": "POST",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "http://localhost:8080/gei/button/d1?value={{{payload}}}",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "senderr": false,
+        "x": 1530,
+        "y": 740,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "83e414c088799e59",
+        "type": "function",
+        "z": "9234d55a8c2d8825",
+        "name": "",
+        "func": "msg.payload = msg.payload[\"seuilLuminosity\"]\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 880,
+        "y": 1060,
+        "wires": [
+            [
+                "8909cf3869cb29b9"
+            ]
+        ]
+    },
+    {
+        "id": "0fa6614aa5f7746e",
+        "type": "function",
+        "z": "9234d55a8c2d8825",
+        "name": "",
+        "func": "msg.payload = msg.payload[\"seuilTemperatureCold\"]\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 880,
+        "y": 1140,
+        "wires": [
+            [
+                "356cd45cbfc039b3"
+            ]
+        ]
+    },
+    {
+        "id": "d1ee9ad604738f9b",
+        "type": "function",
+        "z": "9234d55a8c2d8825",
+        "name": "",
+        "func": "msg.payload = msg.payload[\"seuilCO2\"]\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 880,
+        "y": 1180,
+        "wires": [
+            [
+                "d3fbaaa95c6243b4"
+            ]
+        ]
+    },
+    {
+        "id": "e94f1c8004468ca4",
+        "type": "function",
+        "z": "9234d55a8c2d8825",
+        "name": "",
+        "func": "msg.payload = msg.payload[\"seuilPresence\"]\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 880,
+        "y": 1220,
+        "wires": [
+            [
+                "3ba64897e860b91b"
+            ]
+        ]
+    },
+    {
+        "id": "b20dac0394834f06",
+        "type": "function",
+        "z": "9234d55a8c2d8825",
+        "name": "",
+        "func": "msg.payload = msg.payload[\"seuilNoise\"]\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 880,
+        "y": 1260,
+        "wires": [
+            [
+                "f71ac2d796c0309d"
+            ]
+        ]
+    },
+    {
+        "id": "f2978b1378cc2dfd",
+        "type": "function",
+        "z": "9234d55a8c2d8825",
+        "name": "",
+        "func": "msg.payload = msg.payload[\"seuilDistance\"]\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 880,
+        "y": 1300,
+        "wires": [
+            [
+                "061f45fd18f5d697"
+            ]
+        ]
+    },
+    {
+        "id": "3838a8404d0d3bc2",
+        "type": "ui_text_input",
+        "z": "9234d55a8c2d8825",
+        "name": "",
+        "label": "Seuil hot temperature",
+        "tooltip": "",
+        "group": "4c391319cfee750c",
+        "order": 1,
+        "width": 3,
+        "height": 1,
+        "passthru": true,
+        "mode": "text",
+        "delay": 300,
+        "topic": "topic",
+        "sendOnBlur": true,
+        "className": "",
+        "topicType": "msg",
+        "x": 1340,
+        "y": 1100,
+        "wires": [
+            [
+                "43159c6980fc412f"
+            ]
+        ]
+    },
+    {
+        "id": "b3cb1e58766e8d80",
+        "type": "function",
+        "z": "9234d55a8c2d8825",
+        "name": "",
+        "func": "msg.payload = msg.payload[\"seuilTemperatureHot\"]\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 880,
+        "y": 1100,
+        "wires": [
+            [
+                "3838a8404d0d3bc2"
+            ]
+        ]
+    },
+    {
+        "id": "24cd862f7d2b5918",
+        "type": "http request",
+        "z": "9234d55a8c2d8825",
+        "name": "",
+        "method": "POST",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "http://localhost:8080/gei/button/d2?value={{{payload}}}",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "senderr": false,
+        "x": 1530,
+        "y": 780,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "3d728f1b06d2116d",
+        "type": "http request",
+        "z": "9234d55a8c2d8825",
+        "name": "",
+        "method": "POST",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "http://localhost:8080/gei/button/l1?value={{{payload}}}",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "senderr": false,
+        "x": 1530,
+        "y": 820,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "5cef9c53b39c469a",
+        "type": "http request",
+        "z": "9234d55a8c2d8825",
+        "name": "",
+        "method": "POST",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "http://localhost:8080/gei/button/l2?value={{{payload}}}",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "senderr": false,
+        "x": 1530,
+        "y": 860,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f8f3bbbe5f3fc8a1",
+        "type": "http request",
+        "z": "9234d55a8c2d8825",
+        "name": "",
+        "method": "POST",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "http://localhost:8080/gei/button/s1?value={{{payload}}}",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "senderr": false,
+        "x": 1530,
+        "y": 900,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f4ada01b0f539aad",
+        "type": "http request",
+        "z": "9234d55a8c2d8825",
+        "name": "",
+        "method": "POST",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "http://localhost:8080/gei/button/s2?value={{{payload}}}",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "senderr": false,
+        "x": 1530,
+        "y": 940,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "34ea6b78562f46fe",
+        "type": "http request",
+        "z": "9234d55a8c2d8825",
+        "name": "",
+        "method": "POST",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "http://localhost:8080/gei/order/b1?value={{{payload}}}",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "senderr": false,
+        "x": 1530,
+        "y": 620,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "db298eb4b5a0d71d",
+        "type": "http request",
+        "z": "9234d55a8c2d8825",
+        "name": "",
+        "method": "POST",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "http://localhost:8080/gei/order/b2?value={{{payload}}}",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "senderr": false,
+        "x": 1530,
+        "y": 700,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ede20eaf675a4529",
+        "type": "http request",
+        "z": "9234d55a8c2d8825",
+        "name": "",
+        "method": "POST",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "http://localhost:8080/gei/button/w1?value={{{payload}}}",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "senderr": false,
+        "x": 1530,
+        "y": 980,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ce030d2b84100877",
+        "type": "http request",
+        "z": "9234d55a8c2d8825",
+        "name": "",
+        "method": "POST",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "http://localhost:8080/gei/button/w2?value={{{payload}}}",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "senderr": false,
+        "x": 1530,
+        "y": 1020,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "9206a8d99bb610ce",
+        "type": "http request",
+        "z": "9234d55a8c2d8825",
+        "name": "",
+        "method": "POST",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "http://localhost:8080/gei/seuil/luminosity?value={{{payload}}}",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "senderr": false,
+        "x": 1530,
+        "y": 1060,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "43159c6980fc412f",
+        "type": "http request",
+        "z": "9234d55a8c2d8825",
+        "name": "",
+        "method": "POST",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "http://localhost:8080/gei/seuil/temperatureH?value={{{payload}}}",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "senderr": false,
+        "x": 1530,
+        "y": 1100,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "9bd94c7a12b5c1ac",
+        "type": "http request",
+        "z": "9234d55a8c2d8825",
+        "name": "",
+        "method": "POST",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "http://localhost:8080/gei/seuil/temperatureC?value={{{payload}}}",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "senderr": false,
+        "x": 1530,
+        "y": 1140,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "5ae7bc6d3b8d4d09",
+        "type": "http request",
+        "z": "9234d55a8c2d8825",
+        "name": "",
+        "method": "POST",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "http://localhost:8080/gei/seuil/CO2?value={{{payload}}}",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "senderr": false,
+        "x": 1530,
+        "y": 1180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "719ad69792450119",
+        "type": "http request",
+        "z": "9234d55a8c2d8825",
+        "name": "",
+        "method": "POST",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "http://localhost:8080/gei/seuil/presence?value={{{payload}}}",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "senderr": false,
+        "x": 1530,
+        "y": 1220,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "319066d90adbf072",
+        "type": "http request",
+        "z": "9234d55a8c2d8825",
+        "name": "",
+        "method": "POST",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "http://localhost:8080/gei/seuil/noise?value={{{payload}}}",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "senderr": false,
+        "x": 1530,
+        "y": 1260,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7157ecb0fade5d32",
+        "type": "http request",
+        "z": "9234d55a8c2d8825",
+        "name": "",
+        "method": "POST",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "http://localhost:8080/gei/seuil/distance?value={{{payload}}}",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "senderr": false,
+        "x": 1530,
+        "y": 1300,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "fcc0a2ea1b4005c2",
+        "type": "http request",
+        "z": "9234d55a8c2d8825",
+        "name": "",
+        "method": "POST",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "http://localhost:8080/gei/button/eSW?value={{{payload}}}",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "senderr": false,
+        "x": 270,
+        "y": 160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1ad5109d1ba92529",
+        "type": "ui_text",
+        "z": "9234d55a8c2d8825",
+        "group": "9a6e3e049e7b7592",
+        "order": 7,
+        "width": 4,
+        "height": 1,
+        "name": "tooLoud",
+        "label": "Noise",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "className": "",
+        "x": 1020,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "8921a93ef2f4dd44",
+        "type": "ui_text",
+        "z": "9234d55a8c2d8825",
+        "group": "9a6e3e049e7b7592",
+        "order": 6,
+        "width": 4,
+        "height": 1,
+        "name": "item",
+        "label": "Items",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "className": "",
+        "x": 1010,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "0504f61a456e5772",
+        "type": "ui_switch",
+        "z": "9234d55a8c2d8825",
+        "name": "",
+        "label": "Emergency",
+        "tooltip": "",
+        "group": "66371778ccec7a41",
+        "order": 23,
+        "width": 2,
+        "height": 1,
+        "passthru": false,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 110,
+        "y": 160,
+        "wires": [
+            [
+                "fcc0a2ea1b4005c2"
+            ]
+        ]
+    },
+    {
+        "id": "8fbd7b506c0069b4",
+        "type": "ui_spacer",
+        "z": "9234d55a8c2d8825",
+        "name": "spacer",
+        "group": "9a6e3e049e7b7592",
+        "order": 2,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "b5f09011e80767e0",
+        "type": "ui_spacer",
+        "z": "9234d55a8c2d8825",
+        "name": "spacer",
+        "group": "9a6e3e049e7b7592",
+        "order": 4,
+        "width": 5,
+        "height": 1
+    },
+    {
+        "id": "37f7e6f07fae0fa0",
+        "type": "ui_spacer",
+        "z": "9234d55a8c2d8825",
+        "name": "spacer",
+        "group": "9a6e3e049e7b7592",
+        "order": 8,
+        "width": 12,
+        "height": 1
+    },
+    {
+        "id": "12808bdc67e6ec27",
+        "type": "ui_spacer",
+        "z": "9234d55a8c2d8825",
+        "name": "spacer",
+        "group": "9a6e3e049e7b7592",
+        "order": 12,
+        "width": 12,
+        "height": 1
+    },
+    {
+        "id": "6643eb9277721aaf",
+        "type": "ui_spacer",
+        "z": "9234d55a8c2d8825",
+        "name": "spacer",
+        "group": "66371778ccec7a41",
+        "order": 19,
+        "width": 4,
+        "height": 1
+    },
+    {
+        "id": "f981c549d130b081",
+        "type": "ui_spacer",
+        "z": "9234d55a8c2d8825",
+        "name": "spacer",
+        "group": "66371778ccec7a41",
+        "order": 22,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "98b9b0b0a3bb62e1",
+        "type": "ui_spacer",
+        "z": "9234d55a8c2d8825",
+        "name": "spacer",
+        "group": "66371778ccec7a41",
+        "order": 24,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "9a6e3e049e7b7592",
+        "type": "ui_group",
+        "name": "Room data",
+        "tab": "24fb0ceb5dabdfdc",
+        "order": 1,
+        "disp": true,
+        "width": 12,
+        "collapse": true,
+        "className": ""
+    },
+    {
+        "id": "4c391319cfee750c",
+        "type": "ui_group",
+        "name": "Controls",
+        "tab": "24fb0ceb5dabdfdc",
+        "order": 3,
+        "disp": true,
+        "width": 3,
+        "collapse": true,
+        "className": ""
+    },
+    {
+        "id": "66371778ccec7a41",
+        "type": "ui_group",
+        "name": "Room equipment",
+        "tab": "24fb0ceb5dabdfdc",
+        "order": 2,
+        "disp": true,
+        "width": 8,
+        "collapse": true,
+        "className": ""
+    },
+    {
+        "id": "24fb0ceb5dabdfdc",
+        "type": "ui_tab",
+        "name": "SOA Project",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    }
+]
