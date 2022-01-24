@@ -1,0 +1,15 @@
+
+D:\INSA\5A\SOA\SOA_Project\JARfiles>ECHO OFF 
+Starting microservices...
+BlindMS started
+DoorMS started
+GazMS started
+LightMS started
+LuminosityMS started
+NoiseMS started
+PresenceMS started
+StationMS started
+TemperatureMS started
+ToFMS started
+WindowMS started
+GlobalMS started
