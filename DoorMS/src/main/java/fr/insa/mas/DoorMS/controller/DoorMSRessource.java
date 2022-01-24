@@ -36,7 +36,7 @@ public class DoorMSRessource {
 		return msg;
 	}
 	
-	@PostMapping("/orderO/{id}")
+	@PostMapping("/order/{id}")
 	public void giveOrderOpening(@PathVariable("id") int id, @RequestParam boolean value) {
 		listDoors[id-1].setOrderOpening(value);
 	}
